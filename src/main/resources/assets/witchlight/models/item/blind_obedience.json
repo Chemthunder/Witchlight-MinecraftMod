@@ -1,0 +1,26 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/handheld",
+	"textures": {
+		"layer0": "witchlight:item/blind_obedience"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [90, 90, -35],
+			"translation": [0, 15, 2.75],
+			"scale": [1.75391, 1.75391, 1.75391]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [66.25, -90, 0],
+			"translation": [-0.5, 13.75, 5.25],
+			"scale": [1.75391, 1.75391, 1.75391]
+		},
+		"firstperson_righthand": {
+			"rotation": [-136, 86, -180],
+			"translation": [0, 8.75, 1.5]
+		},
+		"ground": {
+			"translation": [0, 3.75, 0]
+		}
+	}
+}

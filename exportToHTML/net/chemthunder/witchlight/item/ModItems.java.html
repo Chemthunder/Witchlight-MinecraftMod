@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>ModItems.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7bf8e1;}
+.s1 { color: #f8f8f2;}
+.s2 { color: #60a498;}
+.s3 { color: #b5f6ba;}
+.s4 { color: #86dbfd;}
+.s5 { color: #67807b; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#2f3635">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ModItems.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">net.chemthunder.witchlight.item;</span>
+
+
+<span class="s0">import </span><span class="s1">net.chemthunder.witchlight.Witchlight;</span>
+<span class="s0">import </span><span class="s1">net.fabricmc.fabric.api.item.v1.FabricItemSettings;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.item.Item;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.item.SwordItem;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.registry.Registries;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.registry.Registry;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.util.Identifier;</span>
+<span class="s0">import </span><span class="s1">net.minecraft.util.Rarity;</span>
+
+
+<span class="s0">public class </span><span class="s1">ModItems {</span>
+
+    <span class="s0">public static final </span><span class="s1">Item BLIND_OBEDIENCE </span><span class="s2">= </span><span class="s1">registerItem(</span><span class="s3">&quot;blind_obedience&quot;</span><span class="s2">, </span><span class="s0">new </span><span class="s1">SwordItem(ModToolMaterial.UNDEFINED</span><span class="s2">, </span><span class="s4">10</span><span class="s2">,-</span><span class="s4">3.1f</span><span class="s2">, </span><span class="s0">new </span><span class="s1">FabricItemSettings().rarity(Rarity.UNCOMMON)));</span>
+    <span class="s0">public static final </span><span class="s1">Item WILL_OF_DAMNATION </span><span class="s2">= </span><span class="s1">registerItem(</span><span class="s3">&quot;will_of_damnation&quot;</span><span class="s2">, </span><span class="s0">new </span><span class="s1">Item(</span><span class="s0">new </span><span class="s1">FabricItemSettings()));</span>
+
+
+
+    <span class="s5">// useless</span>
+    <span class="s0">public static final </span><span class="s1">Item UNDEFINED </span><span class="s2">= </span><span class="s1">registerItem(</span><span class="s3">&quot;undefined&quot;</span><span class="s2">, </span><span class="s0">new </span><span class="s1">Item(</span><span class="s0">new </span><span class="s1">FabricItemSettings()));</span>
+
+    <span class="s5">// helper methods, the sillies. DO NOT DELETE</span>
+    <span class="s0">private static </span><span class="s1">Item registerItem(String name</span><span class="s2">, </span><span class="s1">Item item) {</span>
+        <span class="s0">return </span><span class="s1">Registry.register(Registries.ITEM</span><span class="s2">, </span><span class="s0">new </span><span class="s1">Identifier(Witchlight.MOD_ID</span><span class="s2">, </span><span class="s1">name)</span><span class="s2">, </span><span class="s1">item);</span>
+    <span class="s1">}</span>
+    <span class="s0">public static void </span><span class="s1">registerModItems() {</span>
+        <span class="s1">Witchlight.LOGGER.info(</span><span class="s3">&quot;Commiting heinous war crimes with the wingman of &quot; </span><span class="s2">+ </span><span class="s1">Witchlight.MOD_ID);</span>
+
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
