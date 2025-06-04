@@ -1,5 +1,6 @@
 package net.chemthunder.witchlight;
 
+import net.chemthunder.witchlight.block.ModBlocks;
 import net.chemthunder.witchlight.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -14,6 +15,7 @@ public class Witchlight implements ModInitializer {
 	@Override
 	public void onInitialize() {
 ModItems.registerModItems();
-		LOGGER.info("I cast furry");
+		ModBlocks.registerModBlocks();
+		LOGGER.info("I cast furry upon vbinnie");
 	}
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "ss ",
+    "ss ",
+    "  s"
+  ],
+  "key": {
+    "s": {
+      "item": "witchlight:rifted_shard"
+    }
+  },
+  "result": {
+    "item": "witchlight:rifted_lexicon",
+    "count": 1
+  },
+  "show_notification": false
+}

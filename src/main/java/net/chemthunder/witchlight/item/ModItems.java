@@ -18,6 +18,13 @@ public class ModItems {
 
 
 
+
+
+    public static final Item RIFTED_SHARD = registerItem("rifted_shard", new Item(new FabricItemSettings()));
+    public static final Item RIFTED_LEXICON = registerItem("rifted_lexicon", new Item(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
+
+
+
     // useless
     public static final Item UNDEFINED = registerItem("undefined", new Item(new FabricItemSettings()));
 
