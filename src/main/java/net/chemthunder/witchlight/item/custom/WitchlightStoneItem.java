@@ -1,20 +1,30 @@
 package net.chemthunder.witchlight.item.custom;
 
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.Text;
+
+import net.minecraft.network.packet.s2c.play.PositionFlag;
+import net.minecraft.predicate.entity.EntityPredicates;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec2f;
-import net.minecraft.util.math.Vec3d;
+
+import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-import org.joml.Vector2d;
-import org.joml.Vector2f;
-import org.joml.Vector3d;
+
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
 
 
 public class WitchlightStoneItem extends Block {
@@ -26,32 +36,18 @@ public class WitchlightStoneItem extends Block {
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
-        super.onPlaced(world, pos, state, placer, itemStack);
+        super.onPlaced(world, pos, state, placer, itemStack);;
+       world.scheduleBlockTick(pos,this,20000);
+              if (!world.isClient) {
+                  List<PlayerEntity> entities = world.getEntitiesByType(EntityType.PLAYER, new Box(placer.getX()-10,placer.getY()-10,placer.getZ()-10,placer.getX()+10,placer.getY()+10,placer.getZ()+10), EntityPredicates.VALID_ENTITY);
 
+        for (PlayerEntity player : entities) {
 
-        if (!world.isClient() && placer.age % 100 <= 0) {
+            player.moveToWorld(world.getServer().getWorld(RegistryKey.of(RegistryKeys.WORLD, new Identifier("witchlight:damnation"))));
+            Set<PositionFlag> flags = EnumSet.noneOf(PositionFlag.class);
+            player.teleport(world.getServer().getWorld(RegistryKey.of(RegistryKeys.WORLD, new Identifier("witchlight:damnation"))), player.getX() + 0.5, player.getY(), player.getZ() + 0.5, flags, player.getYaw(), player.getPitch());
+        }
 
-            ServerCommandSource silentSource = new ServerCommandSource(
-                    world.getServer(),                                // MinecraftServer
-                    Vec3d.ofCenter(pos),                             // Position
-                    new Vec2f(0,0),                             // Rotation
-                    world.getServer().getOverworld(),                 // World
-                    4,                                     // Permission level (e.g., 4 for ops)
-                    "silent_executor",                     // Name
-                    Text.literal("silent_executor"),       // Display name
-                    null,                                // Entity (null is okay)
-                    null                                   // Entity as Command Output
-            ).withSilent();                  // Suppress all output
-
-            try {
-                world.getServer().getCommandManager().getDispatcher().execute("damage @e[distance=50] 4 minecraft:magic", silentSource);
-            } catch (CommandSyntaxException e) {
-                throw new RuntimeException(e);
-            }
         }
     }
-
-
-
-
 }

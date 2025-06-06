@@ -1,0 +1,30 @@
+{
+  "temperature": 5,
+  "downfall": 0,
+  "has_precipitation": true,
+  "temperature_modifier": "none",
+  "ultrawarm": false,
+  "natural": false,
+  "piglin_safe": true,
+  "respawn_anchor_works": false,
+  "bed_works": true,
+  "has_raids": false,
+  "has_skylight": true,
+  "has_ceiling": false,
+  "coordinate_scale": 2,
+  "ambient_light": 1,
+  "fixed_time": 6000,
+  "logical_height": 160,
+  "effects": "minecraft:overworld",
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": "minecraft:cave_extra_underground"
+  },
+  "features": [],
+  "infiniburn": "#minecraft:anvil",
+  "min_y": -160,
+  "height": 400,
+  "monster_spawn_light_level": 0,
+  "monster_spawn_block_light_limit": 1
+}

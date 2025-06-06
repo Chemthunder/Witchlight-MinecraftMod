@@ -1,0 +1,8 @@
+{
+  "witchlight_stone_place": {
+    "subtitle": "sounds.witchlight.witchlight_stone_place",
+    "sounds": [
+      "witchlight:witchlight_stone_place"
+    ]
+  }
+}

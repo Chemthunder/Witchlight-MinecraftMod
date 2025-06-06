@@ -2,5 +2,9 @@
   "item.witchlight.blind_obedience": "Blind Obedience",
   "item.witchlight.will_of_damnation": "Will of Damnation",
   "block.witchlight.witchlight_stone": "§kHOPELESS",
-  "item.witchlight.rifted_lexicon": "Rifted Lexicon"
+  "item.witchlight.rifted_lexicon": "Rifted Lexicon",
+  "itemgroup.witchlight_clockshift": "§eWitchlight: Clockshift",
+
+
+  "tooltip.witchlight.cancerous_emanence": "Why did you make this, for what purpose does it exist?"
 }

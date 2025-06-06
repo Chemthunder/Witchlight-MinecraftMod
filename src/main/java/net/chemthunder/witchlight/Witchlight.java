@@ -1,7 +1,9 @@
 package net.chemthunder.witchlight;
 
 import net.chemthunder.witchlight.block.ModBlocks;
+import net.chemthunder.witchlight.item.ModItemGroups;
 import net.chemthunder.witchlight.item.ModItems;
+import net.chemthunder.witchlight.sound.ModSounds;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.server.command.ServerCommandSource;
@@ -18,6 +20,8 @@ public class Witchlight implements ModInitializer {
 	public void onInitialize() {
 ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModItemGroups.registerItemGroups();
+		ModSounds.registerSounds();
 		LOGGER.info("I cast furry upon vbinnie");
 	}
 

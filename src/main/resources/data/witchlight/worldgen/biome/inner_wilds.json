@@ -1,0 +1,27 @@
+{
+  "temperature": 0,
+  "downfall": 0,
+  "has_precipitation": true,
+  "temperature_modifier": "frozen",
+  "effects": {
+    "sky_color": 3877122,
+    "fog_color": 0,
+    "water_color": 2963523,
+    "water_fog_color": 1382942,
+    "grass_color": 6051901,
+    "foliage_color": 4209963,
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:smoke"
+      },
+      "probability": 0.00000001
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {
+    "air": "minecraft:cave_extra_underground"
+  },
+  "features": []
+}

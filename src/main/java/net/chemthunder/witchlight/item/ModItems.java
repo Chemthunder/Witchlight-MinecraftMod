@@ -14,7 +14,7 @@ import net.minecraft.util.Rarity;
 public class ModItems {
 
     public static final Item BLIND_OBEDIENCE = registerItem("blind_obedience", new SwordItem(ModToolMaterial.UNDEFINED, 10,-3.1f, new FabricItemSettings().rarity(Rarity.UNCOMMON)));
-    public static final Item WILL_OF_DAMNATION = registerItem("will_of_damnation", new Item(new FabricItemSettings()));
+    public static final Item WILL_OF_DAMNATION = registerItem("will_of_damnation", new Item(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
 
 
 
@@ -24,6 +24,8 @@ public class ModItems {
     public static final Item RIFTED_LEXICON = registerItem("rifted_lexicon", new Item(new FabricItemSettings().maxCount(1).rarity(Rarity.UNCOMMON)));
 
 
+
+    public static final Item CANCEROUS_EMANENCE = registerItem("cancerous_emanence", new Item(new FabricItemSettings()));
 
     // useless
     public static final Item UNDEFINED = registerItem("undefined", new Item(new FabricItemSettings()));
